@@ -1,68 +1,17 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+﻿## 一个带分页的table
 
-## Available Scripts
+样式可以根据需要自行添加<br>
 
-In the project directory, you can run:
+在table.js中的state里面的：<br>
+but中填写5个按钮的名称，按照顺序对应“首页”、“上一页”、“下一页”、“尾页”和跳转去某一页的按钮的名称。<br>
+th中填写网页上表格的标题。<br>
+tr中是后台传过来显示的数据。<br>
+page中是分页有关的数据，包括当前页数、每页显示多少条、总页数、总数据量。<br>
+jump存放要跳转到某一页的input框中的输入。<br>
 
-### `npm start`
+changePage函数处理“首页”、“上一页”、“下一页”、“尾页”按钮对state中page的内容的修改。<br>
+changeEverypage函数处理修改每页显示条数后的state中page的内容。<br>
+pageInputChange函数绑定跳转页面input的onChange事件，修改state中jump的值，这里会正则匹配是否输入的是纯数字。<br>
+pageInputChangeGo函数处理点击GO跳转时的逻辑。<br>
+getData函数根据当前state中page的内容向后台发送数据。在changePage、changeEverypage、pageInputChangeGo函数中都会调用这一函数。
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
